@@ -1,7 +1,7 @@
 syntax = "proto3";
 package auth;
 
-option go_package = "./auth_grpc";
+option go_package = "./auth";
 
 message AuthRequest {
     string token = 1;
