@@ -26,7 +26,12 @@ message AuthToken {
     string token = 1;
 }
 
+message Result {
+    bool okay = 1;
+}
+
 service AuthService {
     rpc IsAuth(AuthRequest) returns (AuthResponse) {};
     rpc GenerateToken(AuthTokenRequest) returns (AuthToken) {};
+    rpc SignUp(AuthTokenRequest) returns (Result) {}
 }
