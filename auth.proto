@@ -1,0 +1,26 @@
+syntax = "proto3";
+package auth;
+
+option go_package = "./auth_grpc";
+
+message AuthRequest {
+    string token = 1;
+}
+
+message AuthTokenRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message AuthResponse {
+    bool authenticated = 1;
+}
+
+message AuthToken {
+    string token = 1;
+}
+
+service AuthService {
+    rpc IsAuth(AuthRequest) returns (AuthResponse) {};
+    rpc GenerateToken(AuthTokenRequest) returns (AuthToken) {};
+}
