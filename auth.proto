@@ -7,8 +7,13 @@ message AuthRequest {
     string token = 1;
 }
 
+enum AuthProvider {
+    EMAIL = 0;
+    GOOGLE = 1; 
+}
+
 message AuthTokenRequest {
-    string provider = 1;
+    AuthProvider provider = 1;
     string providerId = 2;
     string password = 3;
 }
